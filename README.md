@@ -20,15 +20,16 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Observe ICMP Traffic
-- Observe SSH Traffic
-- Observe DHCP Traffic
-- Observe DNS Traffic
-- Observe RDP Traffic
+Observe the following:
+- ICMP Traffic
+- SSH Traffic
+- DHCP Traffic
+- DNS Traffic
+- RDP Traffic
 
 <h2>Actions and Observations</h2>
 
-1. For this demonstrations we will need to create two virtual machines using Microsoft Azure. One machine will use Ubuntu Linux, and the other will use Windows 10 as its operating system. Both will have should have a minimum of a two-core virtual cpu, personally I went with four-cores. Once both is set-up, go ahead and login to the Windows 10 version. Download and Install [WireShark](https://www.wireshark.org/download.html). 
+1. In this demonstration two virtual machines will be created using Microsoft Azure. One Virtual Machine (VM) will use Ubuntu Linux, and the other Windows 10 as its operating system (OS). Both will have should have a minimum of a two-core virtual cpu, personally I went with four-cores. Once both is set-up, go ahead and login to the Windows 10 version. Download and Install [WireShark](https://www.wireshark.org/download.html). 
 
 ![2023-01-18 10 44 12 coursecareers com 8c7c0e9793bb](https://user-images.githubusercontent.com/109401839/213242045-9299d76b-2631-4b63-818f-3a74a8a9b3ab.jpg)
 
