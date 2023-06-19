@@ -29,9 +29,12 @@ Observe the following:
 
 <h2>Actions and Observations</h2>
 
-1. In this demonstration two virtual machines will be created using Microsoft Azure. One Virtual Machine (VM) will use Ubuntu Linux, and the other Windows 10 as its operating system (OS). Both will have should have a minimum of a two-core virtual cpu, personally I went with four-cores. Once both is set-up, go ahead and login to the Windows 10 version. Download and Install [WireShark](https://www.wireshark.org/download.html). 
+1. In this demonstration two virtual machines will be created using Microsoft Azure. One Virtual Machine (VM) will use Ubuntu Linux, and the other Windows 10 as its operating system (OS). For the Virtual Machines sizes, I went with 2vcpus | 16GiB for more processing power. Once both VMs are set-up, go ahead and login to the Windows 10 version. Download and Install [WireShark](https://www.wireshark.org/download.html). 
 
-![2023-01-18 10 44 12 coursecareers com 8c7c0e9793bb](https://user-images.githubusercontent.com/109401839/213242045-9299d76b-2631-4b63-818f-3a74a8a9b3ab.jpg)
+<a href="https://imgur.com/NjAe6T7"><img src="https://i.imgur.com/NjAe6T7.png" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/xAFnukb"><img src="https://i.imgur.com/xAFnukb.png" title="source: imgur.com" /></a>
+
 
 
 Open WireShark and for ICMP Traffic only. This traffic will display the relay request and deliver, also known as "ping". We will be able to see how many packets are requested and recieved. The cool thing is that we can inspect the data of the packets in WireShark. 
