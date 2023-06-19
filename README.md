@@ -55,4 +55,4 @@ Open WireShark and for ICMP Traffic only. This traffic will display the relay re
 ![vivaldi_yi916o0Wbr](https://user-images.githubusercontent.com/109401839/213243903-af301b6a-d633-457e-ad1f-dc22cb93edf5.png)
 
 
-In the [next tutorial](https://github.com/fnabeel/Network-File-Shares-and-Permissions),  we will go over settingup Network File Sharing and Permissions. I recommend not destroying your virtual machine you have created in this tutorial. It will come in handy next time !
+In the [next tutorial](https://github.com/ItradeLQ/network-file-shares-and-permissions), the focus will be setting up Network File Sharing and Permissions on the host.Since these are interlinked labs, it is best not to destroy the virtual machine created in this tutorial.
