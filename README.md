@@ -3,15 +3,15 @@
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+In this tutorial, various network traffic to and from Azure Virtual Machines was observed with Wireshark as well as experiment with Network Security Groups. <br />
 
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Command-Line Interface Tools (CLI)
-- Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
-- Wireshark (Protocol Analyzer)
+- Network Protocols [ICMP, SSH, DHCP, DNS, RDP, HTTP(S)]
+- Wireshark (Network Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
 
@@ -21,15 +21,15 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>High-Level Steps</h2>
 
 Observe the following:
-- ICMP Traffic
-- SSH Traffic
-- DHCP Traffic
-- DNS Traffic
-- RDP Traffic
+- Internet Control Messaging Protocol (ICMP) Traffic
+- Secure Shell Protocol (SSH) Traffic
+- Dynamic Host Configuration Protocol (DHCP) Traffic
+- Domain Name System (DNS) Traffic
+- Remote Desktop Protocol (RDP) Traffic
 
 <h2>Actions and Observations</h2>
 
-1. In this demonstration two virtual machines will be created using Microsoft Azure. One Virtual Machine (VM) will use Ubuntu Linux, and the other Windows 10 as its operating system (OS). For the Virtual Machines sizes, I went with 2vcpus | 16GiB for more processing power. Once both VMs are set-up, go ahead and login to the Windows 10 version. Download and Install [WireShark](https://www.wireshark.org/download.html). 
+1. In this demonstration two virtual machines will be created using Microsoft Azure. One Virtual Machine (VM) will be used for Ubuntu Linux, and the other Windows 10 as its operating system (OS). For the Virtual Machines sizes, I went with 2vcpus | 16GiB for more processing power. Once both VMs are set-up, go ahead and login to the Windows 10 version. Download and Install [WireShark](https://www.wireshark.org/download.html). 
 
 <a href="https://imgur.com/NjAe6T7"><img src="https://i.imgur.com/NjAe6T7.png" title="source: imgur.com" /></a>
 
@@ -37,26 +37,26 @@ Observe the following:
 
 
 
-Open WireShark and for ICMP Traffic only. This traffic will display the relay request and deliver, also known as "ping". We will be able to see how many packets are requested and recieved. The cool thing is that we can inspect the data of the packets in WireShark. 
+Open WireShark and for ICMP Traffic only. This traffic will display the relay request and deliver, also known as "ping". We will be able to see how many packets are requested and recieved. Wireshark can then be used to inspect the packets of data. 
 
-![vivaldi_Z27HHIWElt](https://user-images.githubusercontent.com/109401839/213242732-517627c3-b557-40bc-906e-cce25ec02953.png)
+<a href="https://imgur.com/y9ZjdRI"><img src="https://i.imgur.com/y9ZjdRI.png" title="source: imgur.com" /></a>
 
-2. Let us observe a different kind of Traffic, SSH. Filter for SSH traffic only in WireShark. From the Windows 10 VM, "SHH into" the Ubuntu VM. This can be done by using the command, "SSH username@ipaddress" in my case, SSH labuser@10.0.04 , then we will see that WireShark immediately sees the SSH packets between the two VM. 
+2. Observation of SSH Traffic. Filter for SSH Traffic in WireShark. From the Windows 10 VM, "SHH into" the Ubuntu VM. This can be done by using the command, "SSH username@ipaddress". In my case, SSH cclabuser@10.0.5 , then we will see that WireShark immediately send the SSH packets between the two VM. 
 
-![vivaldi_voFaQKzigU](https://user-images.githubusercontent.com/109401839/213243011-f74fa2ba-ba3f-4c0f-938f-2915b998b68e.png)
+<a href="https://imgur.com/isSdOyc"><img src="https://i.imgur.com/isSdOyc.png" title="source: imgur.com" /></a>
 
 
-3. Obeserve DHCP Traffic, DHCP is Dynamic Host Configuration Protocol which operates on ports 67 and 68. The main function of DHCP is to assign different devices their IP-Address. Filter for DHCP in WireShark. We can attempt to issue a new IP address to our Windows 10 VM by using CMD and entering the line "IPCONFIG /RENEW". Now, inspect WireShark for this traffic. 
+3. Obeserve DHCP Traffic, DHCP is Dynamic Host Configuration Protocol which operates on ports 67 and 68. The main function of DHCP is to assign different devices their IP-Address. Filter for DHCP in WireShark. We can attempt to issue a new IP address to our Windows 10 VM by using powershell and entering the line "ipconfig /renew". Now, inspect WireShark for this traffic. 
 
-![vivaldi_2hRg2VDUxe](https://user-images.githubusercontent.com/109401839/213243361-2e338ef0-af7c-47b9-9387-6a002791fd07.png)
+<a href="https://imgur.com/xuoVhQY"><img src="https://i.imgur.com/xuoVhQY.png" title="source: imgur.com" /></a>
 
-4. Observe DNS Traffic, once again, filter for DNS. In CMD, lets use the command "nslookup" to see what google.com or most of any website IP addresses are. Now, inspect WireShark and the traffic it is capturing here. 
+4. Observe DNS Traffic, once again, filter for DNS. In powershell, use use the command "nslookup" to see what www.google.com or most of any website IP addresses are. Now, inspect WireShark and the traffic it is capturing here. 
 
-![vivaldi_p4LlxYiVLv](https://user-images.githubusercontent.com/109401839/213243701-b3915d44-2aa3-4fe7-b637-e7d9c5ecd6c3.png)
+<a href="https://imgur.com/Y0r57q2"><img src="https://i.imgur.com/Y0r57q2.png" title="source: imgur.com" /></a>
 
-5. Observe RDP Traffic, Filter for RDP. We can do this by entering "tcp.port == 3389" in WireShark. Traffic is now constantly flowing, showing a live stream of packets between one computer to another. Fascinating isnt it? 
+5. Observe RDP Traffic and filter for RDP. We can also do this by entering "tcp.port == 3389" in WireShark. Traffic is now constantly flowing, showing a live stream of packets between one computer to another. Fascinating isnt it? 
 
-![vivaldi_yi916o0Wbr](https://user-images.githubusercontent.com/109401839/213243903-af301b6a-d633-457e-ad1f-dc22cb93edf5.png)
+<a href="https://imgur.com/9gbvRb1"><img src="https://i.imgur.com/9gbvRb1.png" title="source: imgur.com" /></a>
 
 
 In the [next tutorial](https://github.com/ItradeLQ/network-file-shares-and-permissions), the focus will be setting up Network File Sharing and Permissions on the host.Since these are interlinked labs, it is best not to destroy the virtual machine created in this tutorial.
