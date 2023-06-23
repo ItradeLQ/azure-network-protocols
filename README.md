@@ -37,7 +37,7 @@ Observe the following:
 
 
 
-Open WireShark and for ICMP Traffic only. This traffic will display the relay request and deliver, also known as "ping". We will be able to see how many packets are requested and recieved. Wireshark can then be used to inspect the packets of data. 
+Open WireShark and search for ICMP Traffic only. This traffic will display the relay request and delivery, also known as "ping". We will be able to see how many packets are requested and recieved. Wireshark can then be used to inspect the packets of data. 
 
 <a href="https://imgur.com/y9ZjdRI"><img src="https://i.imgur.com/y9ZjdRI.png" title="source: imgur.com" /></a>
 
@@ -50,13 +50,13 @@ Open WireShark and for ICMP Traffic only. This traffic will display the relay re
 
 <a href="https://imgur.com/xuoVhQY"><img src="https://i.imgur.com/xuoVhQY.png" title="source: imgur.com" /></a>
 
-4. Observe DNS Traffic, once again, filter for DNS. In powershell, use use the command "nslookup" to see what www.google.com or most of any website IP addresses are. Now, inspect WireShark and the traffic it is capturing here. 
+4. Observe DNS Traffic, once again, filter for DNS. In PowerShell, use the command "nslookup" to see what www.google.com or most of any website IP addresses are. Now, inspect WireShark and the traffic it is capturing here. 
 
 <a href="https://imgur.com/Y0r57q2"><img src="https://i.imgur.com/Y0r57q2.png" title="source: imgur.com" /></a>
 
-5. Observe RDP Traffic and filter for RDP. We can also do this by entering "tcp.port == 3389" in WireShark. Traffic is now constantly flowing, showing a live stream of packets between one computer to another. Fascinating isnt it? 
+5. Observe RDP Traffic and filter for RDP. We can also do this by entering "tcp.port == 3389" in WireShark. Traffic constantly flowing, showing a live stream of packets from one computer to another. That's because both VMs are connected via RDP and any interaction will be recorded. 
 
 <a href="https://imgur.com/9gbvRb1"><img src="https://i.imgur.com/9gbvRb1.png" title="source: imgur.com" /></a>
 
 
-We've reached the end of this exciting tutorial. In the [next tutorial](https://github.com/ItradeLQ/network-file-shares-and-permissions), the focus will be setting up Network File Sharing and Permissions on the host. Since these are interlinked labs, it is best not to destroy the virtual machine created in this tutorial.
+We've reached the end of this exciting tutorial. In the [next tutorial](https://github.com/ItradeLQ/network-file-shares-and-permissions), the focus will be setting up Network File Sharing and Permissions on the host. Since these are interlinked labs, it is best not to destroy the Resoruce Group and virtual machine created in this tutorial.
